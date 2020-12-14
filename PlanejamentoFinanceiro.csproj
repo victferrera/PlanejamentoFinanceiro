@@ -67,6 +67,11 @@
     <Compile Include="form_cadastro_empresa.Designer.cs">
       <DependentUpon>form_cadastro_empresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="PLANFINDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PLANFINDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -87,6 +92,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="PLANFINDataSet.xsc">
+      <DependentUpon>PLANFINDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PLANFINDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PLANFINDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PLANFINDataSet.xss">
+      <DependentUpon>PLANFINDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

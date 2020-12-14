@@ -91,6 +91,7 @@ namespace PlanejamentoFinanceiro
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
             this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
+            this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
             // 
             // parcelamentoToolStripMenuItem
             // 

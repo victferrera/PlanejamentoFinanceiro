@@ -32,5 +32,11 @@ namespace PlanejamentoFinanceiro
             form_cadastro_empresa cadastro_empresa = new form_cadastro_empresa();
             cadastro_empresa.ShowDialog();
         }
+
+        private void cadastroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            form_cadastra_divida divida = new form_cadastra_divida();
+            divida.ShowDialog();
+        }
     }
 }
