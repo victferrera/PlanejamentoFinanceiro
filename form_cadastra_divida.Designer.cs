@@ -35,23 +35,30 @@ namespace PlanejamentoFinanceiro
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pLANFINDataSet = new PlanejamentoFinanceiro.PLANFINDataSet();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.textDescricao = new System.Windows.Forms.TextBox();
+            this.comboEmpresa = new System.Windows.Forms.ComboBox();
             this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pLANFINDataSet = new PlanejamentoFinanceiro.PLANFINDataSet();
+            this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.empresaTableAdapter = new PlanejamentoFinanceiro.PLANFINDataSetTableAdapters.EmpresaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pLANFINDataSet)).BeginInit();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.numericParcelas = new System.Windows.Forms.NumericUpDown();
+            this.numericValor = new System.Windows.Forms.NumericUpDown();
+            this.dateVencimento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLANFINDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericParcelas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericValor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 104);
+            this.label1.Location = new System.Drawing.Point(94, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +67,7 @@ namespace PlanejamentoFinanceiro
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 133);
+            this.label2.Location = new System.Drawing.Point(94, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
@@ -69,7 +76,7 @@ namespace PlanejamentoFinanceiro
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(89, 164);
+            this.label3.Location = new System.Drawing.Point(94, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 2;
@@ -78,7 +85,7 @@ namespace PlanejamentoFinanceiro
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(89, 191);
+            this.label4.Location = new System.Drawing.Point(94, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 3;
@@ -87,100 +94,160 @@ namespace PlanejamentoFinanceiro
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(89, 219);
+            this.label5.Location = new System.Drawing.Point(94, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Empresa";
             // 
-            // textBox1
+            // textNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(189, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 20);
-            this.textBox1.TabIndex = 5;
+            this.textNome.Location = new System.Drawing.Point(194, 64);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(233, 20);
+            this.textNome.TabIndex = 5;
             // 
-            // textBox2
+            // textDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(189, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 20);
-            this.textBox2.TabIndex = 6;
+            this.textDescricao.Location = new System.Drawing.Point(194, 93);
+            this.textDescricao.Name = "textDescricao";
+            this.textDescricao.Size = new System.Drawing.Size(233, 20);
+            this.textDescricao.TabIndex = 6;
             // 
-            // comboBox1
+            // comboEmpresa
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.empresaBindingSource, "cod_cadastro", true));
-            this.comboBox1.DataSource = this.empresaBindingSource;
-            this.comboBox1.DisplayMember = "nome";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(189, 161);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "Empresa";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(189, 216);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(189, 188);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(86, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 35);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Nova Dívida";
-            // 
-            // pLANFINDataSet
-            // 
-            this.pLANFINDataSet.DataSetName = "PLANFINDataSet";
-            this.pLANFINDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.comboEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.empresaBindingSource, "cod_cadastro", true));
+            this.comboEmpresa.DataSource = this.empresaBindingSource;
+            this.comboEmpresa.DisplayMember = "nome";
+            this.comboEmpresa.FormattingEnabled = true;
+            this.comboEmpresa.Location = new System.Drawing.Point(194, 171);
+            this.comboEmpresa.Name = "comboEmpresa";
+            this.comboEmpresa.Size = new System.Drawing.Size(121, 21);
+            this.comboEmpresa.TabIndex = 7;
+            this.comboEmpresa.ValueMember = "cod_cadastro";
             // 
             // empresaBindingSource
             // 
             this.empresaBindingSource.DataMember = "Empresa";
             this.empresaBindingSource.DataSource = this.pLANFINDataSet;
             // 
+            // pLANFINDataSet
+            // 
+            this.pLANFINDataSet.DataSetName = "PLANFINDataSet";
+            this.pLANFINDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comboTipo
+            // 
+            this.comboTipo.FormattingEnabled = true;
+            this.comboTipo.Items.AddRange(new object[] {
+            "Fixa",
+            "Variável"});
+            this.comboTipo.Location = new System.Drawing.Point(194, 224);
+            this.comboTipo.Name = "comboTipo";
+            this.comboTipo.Size = new System.Drawing.Size(121, 21);
+            this.comboTipo.TabIndex = 8;
+            this.comboTipo.Text = "Escolha...";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(91, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(172, 35);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Nova Dívida";
+            // 
             // empresaTableAdapter
             // 
             this.empresaTableAdapter.ClearBeforeFill = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(94, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Valor";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(94, 145);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Parcelas";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(97, 288);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 15;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // numericParcelas
+            // 
+            this.numericParcelas.Location = new System.Drawing.Point(194, 145);
+            this.numericParcelas.Name = "numericParcelas";
+            this.numericParcelas.Size = new System.Drawing.Size(120, 20);
+            this.numericParcelas.TabIndex = 16;
+            // 
+            // numericValor
+            // 
+            this.numericValor.DecimalPlaces = 2;
+            this.numericValor.Location = new System.Drawing.Point(195, 119);
+            this.numericValor.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numericValor.Name = "numericValor";
+            this.numericValor.Size = new System.Drawing.Size(120, 20);
+            this.numericValor.TabIndex = 17;
+            this.numericValor.ThousandsSeparator = true;
+            // 
+            // dateVencimento
+            // 
+            this.dateVencimento.Location = new System.Drawing.Point(194, 198);
+            this.dateVencimento.Name = "dateVencimento";
+            this.dateVencimento.Size = new System.Drawing.Size(121, 20);
+            this.dateVencimento.TabIndex = 18;
             // 
             // form_cadastra_divida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(534, 259);
+            this.ClientSize = new System.Drawing.Size(534, 323);
+            this.Controls.Add(this.dateVencimento);
+            this.Controls.Add(this.numericValor);
+            this.Controls.Add(this.numericParcelas);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboTipo);
+            this.Controls.Add(this.comboEmpresa);
+            this.Controls.Add(this.textDescricao);
+            this.Controls.Add(this.textNome);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "form_cadastra_divida";
-            this.Text = "form_cadastra_divida";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Dívida";
             this.Load += new System.EventHandler(this.form_cadastra_divida_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pLANFINDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLANFINDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericParcelas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericValor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,14 +260,19 @@ namespace PlanejamentoFinanceiro
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textNome;
+        private System.Windows.Forms.TextBox textDescricao;
+        private System.Windows.Forms.ComboBox comboEmpresa;
+        private System.Windows.Forms.ComboBox comboTipo;
         private System.Windows.Forms.Label label6;
         private PLANFINDataSet pLANFINDataSet;
         private System.Windows.Forms.BindingSource empresaBindingSource;
         private PLANFINDataSetTableAdapters.EmpresaTableAdapter empresaTableAdapter;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.NumericUpDown numericParcelas;
+        private System.Windows.Forms.NumericUpDown numericValor;
+        private System.Windows.Forms.DateTimePicker dateVencimento;
     }
 }

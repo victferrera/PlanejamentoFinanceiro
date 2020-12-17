@@ -17,16 +17,20 @@ namespace PlanejamentoFinanceiro
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void form_cadastra_divida_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'pLANFINDataSet.Empresa'. Você pode movê-la ou removê-la conforme necessário.
             this.empresaTableAdapter.Fill(this.pLANFINDataSet.Empresa);
 
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Divida divida = new Divida();
+            Comando.setComando("INSERT INTO DIVIDA VALUES (@NOME, @DESCRICAO, @TIPO, @EMPRESA)");
+            divida.salvarDivida(textNome.Text,textDescricao.Text, numericValor.Value, numericParcelas.Value, comboEmpresa.SelectedValue, dateVencimento.Value, comboTipo.SelectedItem);
+
+        }
+       
     }
 }
