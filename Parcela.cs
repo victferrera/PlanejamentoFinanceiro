@@ -12,9 +12,12 @@ namespace PlanejamentoFinanceiro
     {
         public void salvarParcelas(DateTime dataVencimento, decimal valor, decimal parcelas)
         {
-            decimal parcela = parcelas;
+
             decimal valor_parcelado = valor / parcelas;
-            object id = 0;
+            decimal resto = valor % parcelas;
+            decimal parcela = parcelas + resto;
+            int i = 1;
+            object id = 1;
 
             DateTime vencimento = dataVencimento;
 
@@ -29,16 +32,17 @@ namespace PlanejamentoFinanceiro
 
                 Comando.setComando("INSERT INTO PARCELA VALUES (@NUM_PARCELA,@VENCIMENTO,@STATUS,@VALOR,@ID_DIVIDA)");
 
-                while (parcela != 0)
+                while (i < parcela )
                 {
-                    comando.Parameters.AddWithValue("@NUM_PARCELA", parcela);
+                    comando.Parameters.AddWithValue("@NUM_PARCELA", i);
                     comando.Parameters.AddWithValue("@VENCIMENTO", vencimento);
                     comando.Parameters.AddWithValue("@STATUS", 'P');
-                    comando.Parameters.AddWithValue("@VALOR", Math.Round(valor_parcelado,28));
+                    comando.Parameters.AddWithValue("@VALOR", Math.Round(valor_parcelado+resto, 2));
+                    resto = 0;
                     comando.Parameters.AddWithValue("@ID_DIVIDA", id);
                     comando.ExecuteNonQuery();
                     Comando.limparParametros();
-                    parcela -= 1;
+                    i += 1;
                     vencimento = vencimento.AddDays(30);
                 }
 
