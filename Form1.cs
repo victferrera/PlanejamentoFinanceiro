@@ -17,16 +17,6 @@ namespace PlanejamentoFinanceiro
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void novaDívidaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             form_cadastro_empresa cadastro_empresa = new form_cadastro_empresa();
@@ -37,6 +27,15 @@ namespace PlanejamentoFinanceiro
         {
             form_cadastra_divida divida = new form_cadastra_divida();
             divida.ShowDialog();
+        }
+
+        private void form_telaInicio_Load(object sender, EventArgs e)
+        {
+            DataSet dados = new DataSet();
+            Parcela parcela = new Parcela();
+            dados = parcela.consultaParcela();
+
+            dataGrid1.DataSource = dados.Tables[0];
         }
     }
 }

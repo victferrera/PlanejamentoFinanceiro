@@ -35,31 +35,30 @@ namespace PlanejamentoFinanceiro
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dividaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.parcelamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGrid1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 188);
+            this.label1.Location = new System.Drawing.Point(12, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bem-vindo Vitor!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.empresaToolStripMenuItem,
-            this.dividaToolStripMenuItem,
-            this.parcelamentoToolStripMenuItem});
+            this.dividaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(666, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(557, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,7 +73,7 @@ namespace PlanejamentoFinanceiro
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
@@ -89,29 +88,35 @@ namespace PlanejamentoFinanceiro
             // cadastroToolStripMenuItem1
             // 
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
             this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
             // 
-            // parcelamentoToolStripMenuItem
+            // dataGrid1
             // 
-            this.parcelamentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarToolStripMenuItem});
-            this.parcelamentoToolStripMenuItem.Name = "parcelamentoToolStripMenuItem";
-            this.parcelamentoToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.parcelamentoToolStripMenuItem.Text = "Parcelamento";
+            this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid1.Location = new System.Drawing.Point(12, 148);
+            this.dataGrid1.Name = "dataGrid1";
+            this.dataGrid1.Size = new System.Drawing.Size(533, 213);
+            this.dataGrid1.TabIndex = 2;
             // 
-            // consultarToolStripMenuItem
+            // label2
             // 
-            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultarToolStripMenuItem.Text = "Consultar";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 113);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(350, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Parcelas com vencimento neste mês!";
             // 
             // form_telaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 229);
+            this.ClientSize = new System.Drawing.Size(557, 373);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -120,8 +125,10 @@ namespace PlanejamentoFinanceiro
             this.Name = "form_telaInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planejamento Financeiro";
+            this.Load += new System.EventHandler(this.form_telaInicio_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,8 +142,8 @@ namespace PlanejamentoFinanceiro
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dividaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem parcelamentoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGrid1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

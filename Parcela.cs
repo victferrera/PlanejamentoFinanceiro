@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace PlanejamentoFinanceiro
 {
@@ -55,6 +56,30 @@ namespace PlanejamentoFinanceiro
                 MessageBox.Show(e.Message);
             }
             
+        }
+
+        public DataSet consultaParcela()
+        {
+            DataSet dados = new DataSet();
+
+            try
+            {
+                DateTime vigencia = DateTime.Now;
+
+                string comando = "SELECT PA.num_parcela AS 'NUM.PARCELA', CONVERT(VARCHAR(10), DATAVENCIMENTO, 103) AS 'DATA VENCIMENTO', CASE WHEN PA.status = 'P' THEN 'PENDENTE' ELSE PA.status END AS 'STATUS', PA.valor AS 'VALOR', DIV.descricao AS 'DESCRICAO' FROM PARCELA PA INNER JOIN DIVIDA DIV ON DIV.id = PA.id_divida WHERE MONTH(DATAVENCIMENTO) = " + vigencia.Month;
+
+
+                SqlDataAdapter adapter = new SqlDataAdapter(comando, Banco.getConexao());
+
+                adapter.Fill(dados);
+
+                Banco.fecharConexao();
+            }catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+
+            return dados;
         }
     }
 }
