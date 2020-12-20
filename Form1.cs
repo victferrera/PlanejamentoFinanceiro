@@ -37,5 +37,31 @@ namespace PlanejamentoFinanceiro
 
             dataGrid1.DataSource = dados.Tables[0];
         }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow linhaParcela in dataGrid1.SelectedRows)
+            {
+                if (linhaParcela.Cells[3].Value.ToString() == "LIQUIDADO")
+                {
+                    MessageBox.Show("Status da parcela não permite essa movimentação!");
+                }
+                else if (linhaParcela.Cells[0].Value == null)
+                {
+                    MessageBox.Show("Escolha uma parcela para pagar!","Aviso!");
+                }else
+                {
+                    int id_parcela = int.Parse(linhaParcela.Cells[0].Value.ToString());
+                    int num_parcela = int.Parse(linhaParcela.Cells[1].Value.ToString());
+
+                    Parcela parcela = new Parcela();
+                    parcela.pagarParcela(id_parcela, num_parcela);
+
+                    DataSet dadosAtualizados = parcela.consultaParcela();
+
+                    dataGrid1.DataSource = dadosAtualizados.Tables[0];
+                }
+            }
+        }
     }
 }

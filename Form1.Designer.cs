@@ -37,6 +37,9 @@ namespace PlanejamentoFinanceiro
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnPagar = new System.Windows.Forms.Button();
+            this.btnVisualiza = new System.Windows.Forms.Button();
+            this.btnEstornar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +61,7 @@ namespace PlanejamentoFinanceiro
             this.dividaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(557, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(669, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,10 +97,13 @@ namespace PlanejamentoFinanceiro
             // 
             // dataGrid1
             // 
+            this.dataGrid1.AllowUserToAddRows = false;
+            this.dataGrid1.AllowUserToDeleteRows = false;
             this.dataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid1.Location = new System.Drawing.Point(12, 148);
             this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(533, 213);
+            this.dataGrid1.ReadOnly = true;
+            this.dataGrid1.Size = new System.Drawing.Size(645, 213);
             this.dataGrid1.TabIndex = 2;
             // 
             // label2
@@ -110,11 +116,42 @@ namespace PlanejamentoFinanceiro
             this.label2.TabIndex = 3;
             this.label2.Text = "Parcelas com vencimento neste mês!";
             // 
+            // btnPagar
+            // 
+            this.btnPagar.Location = new System.Drawing.Point(12, 396);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(75, 23);
+            this.btnPagar.TabIndex = 4;
+            this.btnPagar.Text = "Pagar";
+            this.btnPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
+            // 
+            // btnVisualiza
+            // 
+            this.btnVisualiza.Location = new System.Drawing.Point(174, 396);
+            this.btnVisualiza.Name = "btnVisualiza";
+            this.btnVisualiza.Size = new System.Drawing.Size(122, 23);
+            this.btnVisualiza.TabIndex = 5;
+            this.btnVisualiza.Text = "Visualizar/Editar";
+            this.btnVisualiza.UseVisualStyleBackColor = true;
+            // 
+            // btnEstornar
+            // 
+            this.btnEstornar.Location = new System.Drawing.Point(93, 396);
+            this.btnEstornar.Name = "btnEstornar";
+            this.btnEstornar.Size = new System.Drawing.Size(75, 23);
+            this.btnEstornar.TabIndex = 6;
+            this.btnEstornar.Text = "Estornar";
+            this.btnEstornar.UseVisualStyleBackColor = true;
+            // 
             // form_telaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 373);
+            this.ClientSize = new System.Drawing.Size(669, 431);
+            this.Controls.Add(this.btnEstornar);
+            this.Controls.Add(this.btnVisualiza);
+            this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.label1);
@@ -144,6 +181,9 @@ namespace PlanejamentoFinanceiro
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem1;
         private System.Windows.Forms.DataGridView dataGrid1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPagar;
+        private System.Windows.Forms.Button btnVisualiza;
+        private System.Windows.Forms.Button btnEstornar;
     }
 }
 

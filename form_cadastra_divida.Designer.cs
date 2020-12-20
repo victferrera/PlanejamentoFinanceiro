@@ -58,7 +58,7 @@ namespace PlanejamentoFinanceiro
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(94, 64);
+            this.label1.Location = new System.Drawing.Point(19, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace PlanejamentoFinanceiro
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(94, 93);
+            this.label2.Location = new System.Drawing.Point(19, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
@@ -76,7 +76,7 @@ namespace PlanejamentoFinanceiro
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 224);
+            this.label3.Location = new System.Drawing.Point(19, 226);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace PlanejamentoFinanceiro
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 198);
+            this.label4.Location = new System.Drawing.Point(19, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace PlanejamentoFinanceiro
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(94, 171);
+            this.label5.Location = new System.Drawing.Point(19, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 4;
@@ -102,14 +102,14 @@ namespace PlanejamentoFinanceiro
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(194, 64);
+            this.textNome.Location = new System.Drawing.Point(119, 66);
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(233, 20);
             this.textNome.TabIndex = 5;
             // 
             // textDescricao
             // 
-            this.textDescricao.Location = new System.Drawing.Point(194, 93);
+            this.textDescricao.Location = new System.Drawing.Point(119, 95);
             this.textDescricao.Name = "textDescricao";
             this.textDescricao.Size = new System.Drawing.Size(233, 20);
             this.textDescricao.TabIndex = 6;
@@ -120,7 +120,7 @@ namespace PlanejamentoFinanceiro
             this.comboEmpresa.DataSource = this.empresaBindingSource;
             this.comboEmpresa.DisplayMember = "nome";
             this.comboEmpresa.FormattingEnabled = true;
-            this.comboEmpresa.Location = new System.Drawing.Point(194, 171);
+            this.comboEmpresa.Location = new System.Drawing.Point(119, 173);
             this.comboEmpresa.Name = "comboEmpresa";
             this.comboEmpresa.Size = new System.Drawing.Size(121, 21);
             this.comboEmpresa.TabIndex = 7;
@@ -142,7 +142,7 @@ namespace PlanejamentoFinanceiro
             this.comboTipo.Items.AddRange(new object[] {
             "Fixa",
             "Variável"});
-            this.comboTipo.Location = new System.Drawing.Point(194, 224);
+            this.comboTipo.Location = new System.Drawing.Point(119, 226);
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(121, 21);
             this.comboTipo.TabIndex = 8;
@@ -152,7 +152,7 @@ namespace PlanejamentoFinanceiro
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(91, 9);
+            this.label6.Location = new System.Drawing.Point(16, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(172, 35);
             this.label6.TabIndex = 10;
@@ -165,7 +165,7 @@ namespace PlanejamentoFinanceiro
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(94, 119);
+            this.label7.Location = new System.Drawing.Point(19, 121);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 11;
@@ -174,7 +174,7 @@ namespace PlanejamentoFinanceiro
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(94, 145);
+            this.label8.Location = new System.Drawing.Point(19, 147);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 13);
             this.label8.TabIndex = 13;
@@ -182,7 +182,7 @@ namespace PlanejamentoFinanceiro
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(97, 288);
+            this.btnSalvar.Location = new System.Drawing.Point(22, 290);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 15;
@@ -192,7 +192,7 @@ namespace PlanejamentoFinanceiro
             // 
             // numericParcelas
             // 
-            this.numericParcelas.Location = new System.Drawing.Point(194, 145);
+            this.numericParcelas.Location = new System.Drawing.Point(119, 147);
             this.numericParcelas.Name = "numericParcelas";
             this.numericParcelas.Size = new System.Drawing.Size(120, 20);
             this.numericParcelas.TabIndex = 16;
@@ -200,7 +200,7 @@ namespace PlanejamentoFinanceiro
             // numericValor
             // 
             this.numericValor.DecimalPlaces = 2;
-            this.numericValor.Location = new System.Drawing.Point(195, 119);
+            this.numericValor.Location = new System.Drawing.Point(120, 121);
             this.numericValor.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -213,7 +213,7 @@ namespace PlanejamentoFinanceiro
             // 
             // dateVencimento
             // 
-            this.dateVencimento.Location = new System.Drawing.Point(194, 198);
+            this.dateVencimento.Location = new System.Drawing.Point(119, 200);
             this.dateVencimento.Name = "dateVencimento";
             this.dateVencimento.Size = new System.Drawing.Size(121, 20);
             this.dateVencimento.TabIndex = 18;
@@ -223,7 +223,7 @@ namespace PlanejamentoFinanceiro
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(534, 323);
+            this.ClientSize = new System.Drawing.Size(370, 323);
             this.Controls.Add(this.dateVencimento);
             this.Controls.Add(this.numericValor);
             this.Controls.Add(this.numericParcelas);

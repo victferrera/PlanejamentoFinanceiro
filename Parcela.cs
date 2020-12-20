@@ -66,7 +66,7 @@ namespace PlanejamentoFinanceiro
             {
                 DateTime vigencia = DateTime.Now;
 
-                string comando = "SELECT PA.num_parcela AS 'NUM.PARCELA', CONVERT(VARCHAR(10), DATAVENCIMENTO, 103) AS 'DATA VENCIMENTO', CASE WHEN PA.status = 'P' THEN 'PENDENTE' ELSE PA.status END AS 'STATUS', PA.valor AS 'VALOR', DIV.descricao AS 'DESCRICAO' FROM PARCELA PA INNER JOIN DIVIDA DIV ON DIV.id = PA.id_divida WHERE MONTH(DATAVENCIMENTO) = " + vigencia.Month;
+                string comando = "SELECT ID_PARCELA AS 'ID' ,PA.num_parcela AS 'NUM.PARCELA', CONVERT(VARCHAR(10), DATAVENCIMENTO, 103) AS 'DATA VENCIMENTO', CASE WHEN PA.status = 'P' THEN 'PENDENTE' WHEN PA.status = 'L' THEN 'LIQUIDADO' ELSE PA.status END AS 'STATUS', PA.valor AS 'VALOR', DIV.descricao AS 'DESCRICAO' FROM PARCELA PA INNER JOIN DIVIDA DIV ON DIV.id = PA.id_divida WHERE MONTH(DATAVENCIMENTO) = " + vigencia.Month+" AND STATUS IN ('P','L')";
 
 
                 SqlDataAdapter adapter = new SqlDataAdapter(comando, Banco.getConexao());
@@ -80,6 +80,28 @@ namespace PlanejamentoFinanceiro
             }
 
             return dados;
+        }
+
+        public void pagarParcela(int id_parcela, int num_parcela)
+        {
+            try
+            {
+                
+
+                Comando.setComando("UPDATE PARCELA SET STATUS = 'L' WHERE ID_PARCELA = " + id_parcela + " AND NUM_PARCELA = " + num_parcela);
+
+                SqlCommand comando = Comando.getComando();
+
+                comando.ExecuteNonQuery();
+
+                Banco.fecharConexao();
+
+                MessageBox.Show("Parcela paga com sucesso!");
+            }catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+
         }
     }
 }
