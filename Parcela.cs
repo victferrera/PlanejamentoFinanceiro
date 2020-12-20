@@ -103,5 +103,28 @@ namespace PlanejamentoFinanceiro
             }
 
         }
+
+        public void estornarParcela(int id_parcela, int num_parcela)
+        {
+            try
+            {
+
+
+                Comando.setComando("UPDATE PARCELA SET STATUS = 'P' WHERE ID_PARCELA = " + id_parcela + " AND NUM_PARCELA = " + num_parcela);
+
+                SqlCommand comando = Comando.getComando();
+
+                comando.ExecuteNonQuery();
+
+                Banco.fecharConexao();
+
+                MessageBox.Show("Parcela estornada com sucesso!");
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+
+        }
     }
 }

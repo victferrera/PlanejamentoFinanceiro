@@ -143,6 +143,7 @@ namespace PlanejamentoFinanceiro
             this.btnEstornar.TabIndex = 6;
             this.btnEstornar.Text = "Estornar";
             this.btnEstornar.UseVisualStyleBackColor = true;
+            this.btnEstornar.Click += new System.EventHandler(this.btnEstornar_Click);
             // 
             // form_telaInicio
             // 

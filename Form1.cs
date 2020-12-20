@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows;
 
 namespace PlanejamentoFinanceiro
 {
@@ -60,6 +61,36 @@ namespace PlanejamentoFinanceiro
                     DataSet dadosAtualizados = parcela.consultaParcela();
 
                     dataGrid1.DataSource = dadosAtualizados.Tables[0];
+                }
+            }
+        }
+
+        private void btnEstornar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Deseja estornar o pagamento?","Estornar Pagamento",MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                foreach (DataGridViewRow linhaParcela in dataGrid1.SelectedRows)
+                {
+                    if (linhaParcela.Cells[3].Value.ToString() != "LIQUIDADO")
+                    {
+                        MessageBox.Show("Status da parcela não permite essa movimentação!");
+                    }
+                    else if (linhaParcela.Cells[0].Value == null)
+                    {
+                        MessageBox.Show("Escolha uma parcela para pagar!", "Aviso!");
+                    }
+                    else
+                    {
+                        int id_parcela = int.Parse(linhaParcela.Cells[0].Value.ToString());
+                        int num_parcela = int.Parse(linhaParcela.Cells[1].Value.ToString());
+
+                        Parcela parcela = new Parcela();
+                        parcela.estornarParcela(id_parcela, num_parcela);
+
+                        DataSet dadosAtualizados = parcela.consultaParcela();
+
+                        dataGrid1.DataSource = dadosAtualizados.Tables[0];
+                    }
                 }
             }
         }
