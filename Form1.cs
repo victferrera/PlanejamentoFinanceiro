@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows;
+using System.Data.SqlClient;
 
 namespace PlanejamentoFinanceiro
 {
@@ -32,11 +33,23 @@ namespace PlanejamentoFinanceiro
 
         private void form_telaInicio_Load(object sender, EventArgs e)
         {
-            DataSet dados = new DataSet();
-            Parcela parcela = new Parcela();
-            dados = parcela.consultaParcela();
 
+            DataSet dados = new DataSet();
+
+            DataSet comprometido = new DataSet();
+
+            Parcela parcela = new Parcela();
+
+            comprometido = parcela.consultaTotalComprometido();
+
+            dados = parcela.consultaParcela();
+            
             dataGrid1.DataSource = dados.Tables[0];
+
+            foreach (DataRow linha in comprometido.Tables[0].Rows)
+            {
+                numericTotalComprometido.Value = Decimal.Parse(linha["comprometido"].ToString());     
+            }
         }
 
         private void btnPagar_Click(object sender, EventArgs e)

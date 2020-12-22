@@ -40,8 +40,11 @@ namespace PlanejamentoFinanceiro
             this.btnPagar = new System.Windows.Forms.Button();
             this.btnVisualiza = new System.Windows.Forms.Button();
             this.btnEstornar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericTotalComprometido = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericTotalComprometido)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -145,11 +148,43 @@ namespace PlanejamentoFinanceiro
             this.btnEstornar.UseVisualStyleBackColor = true;
             this.btnEstornar.Click += new System.EventHandler(this.btnEstornar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(324, 396);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(195, 19);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Total comprometido este mês:";
+            // 
+            // numericTotalComprometido
+            // 
+            this.numericTotalComprometido.DecimalPlaces = 2;
+            this.numericTotalComprometido.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numericTotalComprometido.InterceptArrowKeys = false;
+            this.numericTotalComprometido.Location = new System.Drawing.Point(525, 398);
+            this.numericTotalComprometido.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numericTotalComprometido.Name = "numericTotalComprometido";
+            this.numericTotalComprometido.ReadOnly = true;
+            this.numericTotalComprometido.Size = new System.Drawing.Size(120, 20);
+            this.numericTotalComprometido.TabIndex = 9;
+            // 
             // form_telaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 431);
+            this.Controls.Add(this.numericTotalComprometido);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnEstornar);
             this.Controls.Add(this.btnVisualiza);
             this.Controls.Add(this.btnPagar);
@@ -167,6 +202,7 @@ namespace PlanejamentoFinanceiro
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericTotalComprometido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +221,8 @@ namespace PlanejamentoFinanceiro
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Button btnVisualiza;
         private System.Windows.Forms.Button btnEstornar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numericTotalComprometido;
     }
 }
 

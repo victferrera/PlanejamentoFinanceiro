@@ -33,7 +33,7 @@ namespace PlanejamentoFinanceiro
 
                 Comando.setComando("INSERT INTO PARCELA VALUES (@NUM_PARCELA,@VENCIMENTO,@STATUS,@VALOR,@ID_DIVIDA)");
 
-                while (i < parcela )
+                while (i <= parcela )
                 {
                     comando.Parameters.AddWithValue("@NUM_PARCELA", i);
                     comando.Parameters.AddWithValue("@VENCIMENTO", vencimento);
@@ -125,6 +125,33 @@ namespace PlanejamentoFinanceiro
                 MessageBox.Show(erro.Message);
             }
 
+        }
+
+        public DataSet consultaTotalComprometido()
+        {
+            try
+            {
+                DataSet comprometidoDataSet = new DataSet();
+
+                DateTime vigencia = DateTime.Now;
+                
+                string comando = (@"SELECT SUM(VALOR) AS COMPROMETIDO FROM PARCELA WHERE MONTH(dataVencimento) = " + vigencia.Month + " AND STATUS IN ('P','L')");
+
+                SqlDataAdapter adapter = new SqlDataAdapter(comando, Banco.getConexao());
+
+                adapter.Fill(comprometidoDataSet);
+
+                Banco.fecharConexao();
+
+                return comprometidoDataSet;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+                return null;
+            }
+            
         }
     }
 }
