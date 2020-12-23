@@ -9,8 +9,15 @@ using System.Data;
 
 namespace PlanejamentoFinanceiro
 {
-    class Parcela
+    public class Parcela
     {
+        public int id { get; set; }
+        public int num_parcela { get; set; }
+        public DateTime dataVencimento { get; set; }
+        public char status { get; set; }
+        public decimal valor { get; set; }
+        public int id_divida { get; private set; }
+
         public void salvarParcelas(DateTime dataVencimento, decimal valor, decimal parcelas)
         {
 

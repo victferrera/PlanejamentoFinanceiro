@@ -135,8 +135,9 @@ namespace PlanejamentoFinanceiro
             this.btnVisualiza.Name = "btnVisualiza";
             this.btnVisualiza.Size = new System.Drawing.Size(122, 23);
             this.btnVisualiza.TabIndex = 5;
-            this.btnVisualiza.Text = "Visualizar/Editar";
+            this.btnVisualiza.Text = "Editar";
             this.btnVisualiza.UseVisualStyleBackColor = true;
+            this.btnVisualiza.Click += new System.EventHandler(this.btnVisualiza_Click);
             // 
             // btnEstornar
             // 

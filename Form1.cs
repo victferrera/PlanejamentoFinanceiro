@@ -107,5 +107,22 @@ namespace PlanejamentoFinanceiro
                 }
             }
         }
+
+        private void btnVisualiza_Click(object sender, EventArgs e)
+        {
+            Parcela parcela = new Parcela();
+
+            foreach (DataGridViewRow linhaParcela in dataGrid1.SelectedRows)
+            {
+                parcela.id = int.Parse(linhaParcela.Cells[0].Value.ToString());
+                parcela.num_parcela = int.Parse(linhaParcela.Cells[1].Value.ToString());
+                parcela.dataVencimento = DateTime.Parse(linhaParcela.Cells[2].Value.ToString());
+                parcela.valor = (decimal)linhaParcela.Cells[4].Value;    
+            }
+
+            form_edita_divida editar = new form_edita_divida(parcela);
+            
+            editar.ShowDialog();
+        }
     }
 }

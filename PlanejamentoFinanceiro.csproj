@@ -68,6 +68,12 @@
     <Compile Include="form_cadastro_empresa.Designer.cs">
       <DependentUpon>form_cadastro_empresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_edita_divida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_edita_divida.Designer.cs">
+      <DependentUpon>form_edita_divida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Parcela.cs" />
     <Compile Include="PLANFINDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_cadastro_empresa.resx">
       <DependentUpon>form_cadastro_empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_edita_divida.resx">
+      <DependentUpon>form_edita_divida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
