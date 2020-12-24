@@ -35,5 +35,11 @@ namespace PlanejamentoFinanceiro
         {
 
         }
+
+        private void btnEditarDados_Click(object sender, EventArgs e)
+        {
+            form_editar_dados_2 editarDados = new form_editar_dados_2();
+            editarDados.Show();
+        }
     }
 }

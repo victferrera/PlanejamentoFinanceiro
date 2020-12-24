@@ -51,6 +51,7 @@ namespace PlanejamentoFinanceiro
             this.btnEditarDados.TabIndex = 1;
             this.btnEditarDados.Text = "Editar";
             this.btnEditarDados.UseVisualStyleBackColor = true;
+            this.btnEditarDados.Click += new System.EventHandler(this.btnEditarDados_Click);
             // 
             // label1
             // 
