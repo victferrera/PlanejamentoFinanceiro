@@ -68,6 +68,12 @@
     <Compile Include="form_cadastro_empresa.Designer.cs">
       <DependentUpon>form_cadastro_empresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_editar_dados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_editar_dados.Designer.cs">
+      <DependentUpon>form_editar_dados.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_edita_divida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_cadastro_empresa.resx">
       <DependentUpon>form_cadastro_empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_editar_dados.resx">
+      <DependentUpon>form_editar_dados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_edita_divida.resx">
       <DependentUpon>form_edita_divida.cs</DependentUpon>

@@ -53,7 +53,7 @@ namespace PlanejamentoFinanceiro
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 36);
+            this.label1.Location = new System.Drawing.Point(6, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 32);
             this.label1.TabIndex = 0;
@@ -89,8 +89,9 @@ namespace PlanejamentoFinanceiro
             // listagemToolStripMenuItem
             // 
             this.listagemToolStripMenuItem.Name = "listagemToolStripMenuItem";
-            this.listagemToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.listagemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listagemToolStripMenuItem.Text = "Listagem";
+            this.listagemToolStripMenuItem.Click += new System.EventHandler(this.listagemToolStripMenuItem_Click);
             // 
             // dividaToolStripMenuItem
             // 
@@ -104,7 +105,7 @@ namespace PlanejamentoFinanceiro
             // cadastroToolStripMenuItem1
             // 
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
             this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
             // 
@@ -113,6 +114,7 @@ namespace PlanejamentoFinanceiro
             this.listagemToolStripMenuItem1.Name = "listagemToolStripMenuItem1";
             this.listagemToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.listagemToolStripMenuItem1.Text = "Listagem";
+            this.listagemToolStripMenuItem1.Click += new System.EventHandler(this.listagemToolStripMenuItem1_Click);
             // 
             // dataGrid1
             // 

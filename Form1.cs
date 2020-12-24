@@ -133,5 +133,17 @@ namespace PlanejamentoFinanceiro
             DataSet parcelas = parcela.consultaParcela();
             dataGrid1.DataSource = parcelas.Tables[0];
         }
+
+        private void listagemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form_editar_dados editarDados = new form_editar_dados();
+            editarDados.ShowDialog();
+        }
+
+        private void listagemToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            form_editar_dados editarDados = new form_editar_dados();
+            editarDados.ShowDialog();
+        }
     }
 }
