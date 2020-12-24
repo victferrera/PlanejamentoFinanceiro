@@ -136,14 +136,14 @@ namespace PlanejamentoFinanceiro
 
         private void listagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            form_editar_dados editarDados = new form_editar_dados();
-            editarDados.ShowDialog();
+            form_editar_dados editarDadosEmpresa = new form_editar_dados();
+            editarDadosEmpresa.ShowDialog();
         }
 
         private void listagemToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            form_editar_dados editarDados = new form_editar_dados();
-            editarDados.ShowDialog();
+            form_editar_dados editarDadosDivida = new form_editar_dados();
+            editarDadosDivida.ShowDialog();
         }
     }
 }
