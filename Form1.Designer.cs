@@ -33,8 +33,10 @@ namespace PlanejamentoFinanceiro
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dividaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listagemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGrid1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPagar = new System.Windows.Forms.Button();
@@ -71,7 +73,8 @@ namespace PlanejamentoFinanceiro
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem});
+            this.cadastroToolStripMenuItem,
+            this.listagemToolStripMenuItem});
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
             this.empresaToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.empresaToolStripMenuItem.Text = "Empresa";
@@ -79,24 +82,37 @@ namespace PlanejamentoFinanceiro
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
+            // 
+            // listagemToolStripMenuItem
+            // 
+            this.listagemToolStripMenuItem.Name = "listagemToolStripMenuItem";
+            this.listagemToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.listagemToolStripMenuItem.Text = "Listagem";
             // 
             // dividaToolStripMenuItem
             // 
             this.dividaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem1});
+            this.cadastroToolStripMenuItem1,
+            this.listagemToolStripMenuItem1});
             this.dividaToolStripMenuItem.Name = "dividaToolStripMenuItem";
             this.dividaToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.dividaToolStripMenuItem.Text = "Divida";
+            this.dividaToolStripMenuItem.Text = "Dívida";
             // 
             // cadastroToolStripMenuItem1
             // 
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
             this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
+            // 
+            // listagemToolStripMenuItem1
+            // 
+            this.listagemToolStripMenuItem1.Name = "listagemToolStripMenuItem1";
+            this.listagemToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listagemToolStripMenuItem1.Text = "Listagem";
             // 
             // dataGrid1
             // 
@@ -224,6 +240,8 @@ namespace PlanejamentoFinanceiro
         private System.Windows.Forms.Button btnEstornar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericTotalComprometido;
+        private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem1;
     }
 }
 
