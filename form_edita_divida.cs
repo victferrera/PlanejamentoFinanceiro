@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PlanejamentoFinanceiro
 {
@@ -29,6 +30,11 @@ namespace PlanejamentoFinanceiro
         {
             dateVencimento.Value = ParcelaParaEditar.dataVencimento;
             numValor.Value = ParcelaParaEditar.valor;
+        }
+
+        private void btnSalvarEditar_Click(object sender, EventArgs e)
+        {
+            ParcelaParaEditar.editarParcela(ParcelaParaEditar, dateVencimento.Value, numValor.Value);
         }
     }
 }

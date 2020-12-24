@@ -18,6 +18,12 @@ namespace PlanejamentoFinanceiro
         public decimal valor { get; set; }
         public int id_divida { get; private set; }
 
+        public Parcela()
+        {
+            id = 0;
+            num_parcela = 0;
+        }
+
         public void salvarParcelas(DateTime dataVencimento, decimal valor, decimal parcelas)
         {
 
@@ -159,6 +165,28 @@ namespace PlanejamentoFinanceiro
                 return null;
             }
             
+        }
+
+        public void editarParcela(Parcela ParcelaParaEditar, DateTime dateVencimento, decimal numValor)
+        {
+            Comando.setComando("UPDATE PARCELA SET dataVencimento = @dataVencimento, valor = @valor WHERE id_parcela = @id_parcela and num_parcela = @num_parcela");
+            SqlCommand comando = Comando.getComando();
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@dataVencimento", dateVencimento);
+            comando.Parameters.AddWithValue("@valor", numValor);
+            comando.Parameters.AddWithValue("@id_parcela", ParcelaParaEditar.id);
+            comando.Parameters.AddWithValue("@num_parcela", ParcelaParaEditar.num_parcela);
+            try
+            {
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Parcela alterada com sucesso!");
+                Banco.fecharConexao();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+                Banco.fecharConexao();
+            }
         }
     }
 }

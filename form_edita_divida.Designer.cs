@@ -88,6 +88,7 @@ namespace PlanejamentoFinanceiro
             this.btnSalvarEditar.TabIndex = 6;
             this.btnSalvarEditar.Text = "Salvar";
             this.btnSalvarEditar.UseVisualStyleBackColor = true;
+            this.btnSalvarEditar.Click += new System.EventHandler(this.btnSalvarEditar_Click);
             // 
             // form_edita_divida
             // 

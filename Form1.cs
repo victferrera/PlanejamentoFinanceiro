@@ -121,8 +121,17 @@ namespace PlanejamentoFinanceiro
             }
 
             form_edita_divida editar = new form_edita_divida(parcela);
-            
-            editar.ShowDialog();
+
+            if (parcela.id == 0)
+            {
+                MessageBox.Show("Escolha uma parcela para editar!");
+            }else
+            {
+                editar.ShowDialog();
+            }
+
+            DataSet parcelas = parcela.consultaParcela();
+            dataGrid1.DataSource = parcelas.Tables[0];
         }
     }
 }
