@@ -38,14 +38,14 @@ namespace PlanejamentoFinanceiro
             // dataGridViewDados
             // 
             this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDados.Location = new System.Drawing.Point(12, 70);
+            this.dataGridViewDados.Location = new System.Drawing.Point(12, 69);
             this.dataGridViewDados.Name = "dataGridViewDados";
-            this.dataGridViewDados.Size = new System.Drawing.Size(483, 150);
+            this.dataGridViewDados.Size = new System.Drawing.Size(631, 211);
             this.dataGridViewDados.TabIndex = 0;
             // 
             // btnEditarDados
             // 
-            this.btnEditarDados.Location = new System.Drawing.Point(13, 227);
+            this.btnEditarDados.Location = new System.Drawing.Point(13, 295);
             this.btnEditarDados.Name = "btnEditarDados";
             this.btnEditarDados.Size = new System.Drawing.Size(75, 23);
             this.btnEditarDados.TabIndex = 1;
@@ -66,13 +66,14 @@ namespace PlanejamentoFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 260);
+            this.ClientSize = new System.Drawing.Size(655, 330);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditarDados);
             this.Controls.Add(this.dataGridViewDados);
             this.Name = "form_editar_dados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar dados";
+            this.Load += new System.EventHandler(this.form_editar_dados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

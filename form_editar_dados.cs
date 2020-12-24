@@ -16,5 +16,24 @@ namespace PlanejamentoFinanceiro
         {
             InitializeComponent();
         }
+
+        public form_editar_dados(Empresa empresa)
+        {
+            InitializeComponent();
+            DataSet empresas = empresa.consultaEmpresas();
+            dataGridViewDados.DataSource = empresas.Tables[0];
+        }
+
+        public form_editar_dados(Divida divida)
+        {
+            InitializeComponent();
+            DataSet dividas = divida.consultaDividas();
+            dataGridViewDados.DataSource = dividas.Tables[0];
+        }
+
+        private void form_editar_dados_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

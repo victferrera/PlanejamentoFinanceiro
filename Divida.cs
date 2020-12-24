@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace PlanejamentoFinanceiro
 {
-    class Divida
+    public class Divida
     {
+        public int id { get; set; }
+        public string nome { get; set; }
+        public string descricao { get; set; }
+        public char tipoDivida { get; set; }
+        public int cod_cadastro { get; set; }
         public void salvarDivida(string nome, string descricao, decimal valor, decimal parcelas, object idEmpresa, DateTime dataVencimento, object tipoDivida)
         {
             try
@@ -26,8 +28,6 @@ namespace PlanejamentoFinanceiro
 
                 Parcela parcela = new Parcela();
 
-                //DateTime dataVencimento, decimal valor, int parcelas
-
                 parcela.salvarParcelas(dataVencimento, valor, parcelas);
 
             }catch(Exception e)
@@ -35,5 +35,26 @@ namespace PlanejamentoFinanceiro
                 MessageBox.Show(e.Message);
             }
         }
+
+        public DataSet consultaDividas()
+        {
+            DataSet dividas = new DataSet();
+            string comando = @"SELECT DIVIDA.NOME AS 'NOME', DIVIDA.DESCRICAO AS 'DESCRIÇÃO', CASE WHEN TIPODIVIDA = 'V' THEN 'VARIÁVEL' WHEN TIPODIVIDA = 'F' THEN 'FIXA' END AS 'TIPO DÍVIDA' FROM DIVIDA INNER JOIN EMPRESA ON EMPRESA.COD_CADASTRO = DIVIDA.COD_CADASTRO";
+
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(comando, Banco.getConexao());
+                adapter.Fill(dividas);
+                Banco.fecharConexao();
+                return dividas;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+                Banco.fecharConexao();
+                return null;
+            }
+        }
+        
     }
 }
