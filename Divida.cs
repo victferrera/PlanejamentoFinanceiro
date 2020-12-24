@@ -10,7 +10,7 @@ namespace PlanejamentoFinanceiro
         public int id { get; set; }
         public string nome { get; set; }
         public string descricao { get; set; }
-        public char tipoDivida { get; set; }
+        public string tipoDivida { get; set; }
         public int cod_cadastro { get; set; }
         public void salvarDivida(string nome, string descricao, decimal valor, decimal parcelas, object idEmpresa, DateTime dataVencimento, object tipoDivida)
         {

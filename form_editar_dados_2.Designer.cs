@@ -34,6 +34,8 @@ namespace PlanejamentoFinanceiro
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSalvarEdicao = new System.Windows.Forms.Button();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.comboBoxTipoDivida = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBoxNome
@@ -70,18 +72,40 @@ namespace PlanejamentoFinanceiro
             // 
             // btnSalvarEdicao
             // 
-            this.btnSalvarEdicao.Location = new System.Drawing.Point(121, 121);
+            this.btnSalvarEdicao.Location = new System.Drawing.Point(121, 161);
             this.btnSalvarEdicao.Name = "btnSalvarEdicao";
             this.btnSalvarEdicao.Size = new System.Drawing.Size(75, 23);
             this.btnSalvarEdicao.TabIndex = 4;
             this.btnSalvarEdicao.Text = "Salvar";
             this.btnSalvarEdicao.UseVisualStyleBackColor = true;
             // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(33, 122);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(78, 13);
+            this.lblTipo.TabIndex = 6;
+            this.lblTipo.Text = "Tipo de Dívida";
+            // 
+            // comboBoxTipoDivida
+            // 
+            this.comboBoxTipoDivida.FormattingEnabled = true;
+            this.comboBoxTipoDivida.Items.AddRange(new object[] {
+            "Variável",
+            "Fixa"});
+            this.comboBoxTipoDivida.Location = new System.Drawing.Point(121, 119);
+            this.comboBoxTipoDivida.Name = "comboBoxTipoDivida";
+            this.comboBoxTipoDivida.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTipoDivida.TabIndex = 7;
+            // 
             // form_editar_dados_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 159);
+            this.ClientSize = new System.Drawing.Size(404, 208);
+            this.Controls.Add(this.comboBoxTipoDivida);
+            this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.btnSalvarEdicao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -90,6 +114,7 @@ namespace PlanejamentoFinanceiro
             this.Name = "form_editar_dados_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edição de dados";
+            this.Load += new System.EventHandler(this.form_editar_dados_2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +127,7 @@ namespace PlanejamentoFinanceiro
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSalvarEdicao;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.ComboBox comboBoxTipoDivida;
     }
 }

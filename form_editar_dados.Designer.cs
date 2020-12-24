@@ -29,19 +29,19 @@ namespace PlanejamentoFinanceiro
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewDados = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnEditarDados = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewDados
+            // dataGridView2
             // 
-            this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDados.Location = new System.Drawing.Point(12, 69);
-            this.dataGridViewDados.Name = "dataGridViewDados";
-            this.dataGridViewDados.Size = new System.Drawing.Size(631, 211);
-            this.dataGridViewDados.TabIndex = 0;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 69);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(631, 211);
+            this.dataGridView2.TabIndex = 0;
             // 
             // btnEditarDados
             // 
@@ -70,12 +70,11 @@ namespace PlanejamentoFinanceiro
             this.ClientSize = new System.Drawing.Size(655, 330);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditarDados);
-            this.Controls.Add(this.dataGridViewDados);
+            this.Controls.Add(this.dataGridView2);
             this.Name = "form_editar_dados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar dados";
-            this.Load += new System.EventHandler(this.form_editar_dados_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,7 +82,7 @@ namespace PlanejamentoFinanceiro
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewDados;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnEditarDados;
         private System.Windows.Forms.Label label1;
     }
