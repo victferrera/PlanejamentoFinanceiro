@@ -148,7 +148,7 @@ namespace PlanejamentoFinanceiro
 
                 DateTime vigencia = DateTime.Now;
                 
-                string comando = (@"SELECT SUM(VALOR) AS COMPROMETIDO FROM PARCELA WHERE MONTH(dataVencimento) = " + vigencia.Month + " AND STATUS IN ('P','L')");
+                string comando = (@"SELECT ISNULL(SUM(VALOR),0) AS COMPROMETIDO FROM PARCELA WHERE MONTH(dataVencimento) = " + vigencia.Month + " AND STATUS IN ('P','L')");
 
                 SqlDataAdapter adapter = new SqlDataAdapter(comando, Banco.getConexao());
 

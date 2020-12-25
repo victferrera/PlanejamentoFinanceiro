@@ -46,9 +46,9 @@ namespace PlanejamentoFinanceiro
             
             dataGrid1.DataSource = dados.Tables[0];
 
-            foreach (DataRow linha in comprometido.Tables[0].Rows)
+           foreach (DataRow linha in comprometido.Tables[0].Rows)
             {
-                numericTotalComprometido.Value = Decimal.Parse(linha["comprometido"].ToString());     
+                numericTotalComprometido.Value = Decimal.Parse(linha["comprometido"].ToString());
             }
         }
 
