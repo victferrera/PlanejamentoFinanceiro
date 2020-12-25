@@ -39,21 +39,26 @@ namespace PlanejamentoFinanceiro
             {
                 foreach (DataGridViewRow linhaDivida in dataGridView2.SelectedRows)
                 {
-                        this.divida.nome = linhaDivida.Cells[0].Value.ToString();
-                        this.divida.descricao = linhaDivida.Cells[1].Value.ToString();
-                        this.divida.tipoDivida = linhaDivida.Cells[2].Value.ToString();
+
+                    this.divida.nome = linhaDivida.Cells[1].Value.ToString();
+                    this.divida.descricao = linhaDivida.Cells[2].Value.ToString();
+                    this.divida.tipoDivida = linhaDivida.Cells[3].Value.ToString();
+                    this.divida.id = int.Parse(linhaDivida.Cells[0].Value.ToString());
+
+                    form_editar_dados_2 editarDadosDivida = new form_editar_dados_2(this.divida);
+                    editarDadosDivida.ShowDialog();
                 }
-                form_editar_dados_2 editarDadosDivida = new form_editar_dados_2(this.divida);
-                editarDadosDivida.ShowDialog();
             }else
             {
                 foreach (DataGridViewRow linhaEmpresa in dataGridView2.SelectedRows)
                 {
-                    this.empresa.nome = linhaEmpresa.Cells[1].Value.ToString();
-                    this.empresa.descricao = linhaEmpresa.Cells[2].Value.ToString();
+                    this.empresa.nome = linhaEmpresa.Cells[2].Value.ToString();
+                    this.empresa.descricao = linhaEmpresa.Cells[3].Value.ToString();
+                    this.empresa.cod_cadastro = int.Parse(linhaEmpresa.Cells[0].Value.ToString());
+
+                    form_editar_dados_2 editarDadosEmpresa = new form_editar_dados_2(this.empresa);
+                    editarDadosEmpresa.ShowDialog();
                 }
-                form_editar_dados_2 editarDadosEmpresa = new form_editar_dados_2(this.empresa);
-                editarDadosEmpresa.ShowDialog();
             }
         }
     }

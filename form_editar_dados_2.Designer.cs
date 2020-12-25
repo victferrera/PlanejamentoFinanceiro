@@ -78,6 +78,7 @@ namespace PlanejamentoFinanceiro
             this.btnSalvarEdicao.TabIndex = 4;
             this.btnSalvarEdicao.Text = "Salvar";
             this.btnSalvarEdicao.UseVisualStyleBackColor = true;
+            this.btnSalvarEdicao.Click += new System.EventHandler(this.btnSalvarEdicao_Click);
             // 
             // lblTipo
             // 
@@ -98,6 +99,7 @@ namespace PlanejamentoFinanceiro
             this.comboBoxTipoDivida.Name = "comboBoxTipoDivida";
             this.comboBoxTipoDivida.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoDivida.TabIndex = 7;
+            this.comboBoxTipoDivida.Text = "...";
             // 
             // form_editar_dados_2
             // 
@@ -114,7 +116,6 @@ namespace PlanejamentoFinanceiro
             this.Name = "form_editar_dados_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edição de dados";
-            this.Load += new System.EventHandler(this.form_editar_dados_2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

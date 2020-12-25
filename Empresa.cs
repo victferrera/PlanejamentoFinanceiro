@@ -35,7 +35,7 @@ namespace PlanejamentoFinanceiro
         public DataSet consultaEmpresas()
         {
             DataSet empresas = new DataSet();
-            string comando = @"SELECT CNPJ AS 'CNPJ', NOME AS 'NOME', DESCRICAO AS 'DESCRIÇÃO'  FROM EMPRESA";
+            string comando = @"SELECT COD_CADASTRO as 'ID', CNPJ AS 'CNPJ', NOME AS 'NOME', DESCRICAO AS 'DESCRIÇÃO'  FROM EMPRESA";
 
             try
             {
@@ -50,6 +50,29 @@ namespace PlanejamentoFinanceiro
                 MessageBox.Show(error.Message);
                 Banco.fecharConexao();
                 return null;
+            }
+        }
+
+        public void editarEmpresa(string nome, string descricao, int id)
+        {
+            string comando = @"UPDATE EMPRESA SET NOME = @NOME, DESCRICAO = @DESCRICAO WHERE COD_CADASTRO = @ID";
+            Comando.setComando(comando);
+            SqlCommand sqlcommand = Comando.getComando();
+            sqlcommand.Parameters.Clear();
+            sqlcommand.Parameters.AddWithValue("@NOME", nome);
+            sqlcommand.Parameters.AddWithValue("@DESCRICAO", descricao);
+            sqlcommand.Parameters.AddWithValue("@ID", id);
+
+            try
+            {
+                sqlcommand.ExecuteNonQuery();
+                MessageBox.Show("dados de Empresa alterados com sucesso!");
+                Banco.fecharConexao();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+                Banco.fecharConexao();
             }
         }
     }

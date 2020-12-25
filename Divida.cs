@@ -39,7 +39,7 @@ namespace PlanejamentoFinanceiro
         public DataSet consultaDividas()
         {
             DataSet dividas = new DataSet();
-            string comando = @"SELECT DIVIDA.NOME AS 'NOME', DIVIDA.DESCRICAO AS 'DESCRIÇÃO', CASE WHEN TIPODIVIDA = 'V' THEN 'VARIÁVEL' WHEN TIPODIVIDA = 'F' THEN 'FIXA' END AS 'TIPO DÍVIDA' FROM DIVIDA INNER JOIN EMPRESA ON EMPRESA.COD_CADASTRO = DIVIDA.COD_CADASTRO";
+            string comando = @"SELECT DIVIDA.ID AS 'ID', DIVIDA.NOME AS 'NOME', DIVIDA.DESCRICAO AS 'DESCRIÇÃO', CASE WHEN TIPODIVIDA = 'V' THEN 'VARIÁVEL' WHEN TIPODIVIDA = 'F' THEN 'FIXA' END AS 'TIPO DÍVIDA' FROM DIVIDA INNER JOIN EMPRESA ON EMPRESA.COD_CADASTRO = DIVIDA.COD_CADASTRO";
 
             try
             {
@@ -53,6 +53,29 @@ namespace PlanejamentoFinanceiro
                 MessageBox.Show(error.Message);
                 Banco.fecharConexao();
                 return null;
+            }
+        }
+
+        public void editarDivida(string nome, string descricao, string tipoDivida, int id)
+        {
+            string comando = @"UPDATE DIVIDA SET NOME = @NOME, DESCRICAO = @DESCRICAO, TIPODIVIDA = @TIPODIVIDA WHERE ID = @ID";
+            Comando.setComando(comando);
+            SqlCommand sqlcommand = Comando.getComando();
+            sqlcommand.Parameters.Clear();
+            sqlcommand.Parameters.AddWithValue("@NOME", nome );
+            sqlcommand.Parameters.AddWithValue("@DESCRICAO", descricao);
+            sqlcommand.Parameters.AddWithValue("@TIPODIVIDA", tipoDivida.Substring(0,1));
+            sqlcommand.Parameters.AddWithValue("@ID", id);
+
+            try
+            {
+                sqlcommand.ExecuteNonQuery();
+                MessageBox.Show("Dados da Dívida alterados com sucesso!");
+                Banco.fecharConexao();
+            }catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+                Banco.fecharConexao();
             }
         }
         
