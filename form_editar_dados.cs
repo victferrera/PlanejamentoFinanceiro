@@ -47,6 +47,8 @@ namespace PlanejamentoFinanceiro
 
                     form_editar_dados_2 editarDadosDivida = new form_editar_dados_2(this.divida);
                     editarDadosDivida.ShowDialog();
+                    DataSet dividas = this.divida.consultaDividas();
+                    dataGridView2.DataSource = dividas.Tables[0];
                 }
             }else
             {
@@ -58,6 +60,8 @@ namespace PlanejamentoFinanceiro
 
                     form_editar_dados_2 editarDadosEmpresa = new form_editar_dados_2(this.empresa);
                     editarDadosEmpresa.ShowDialog();
+                    DataSet empresas = this.empresa.consultaEmpresas();
+                    dataGridView2.DataSource = empresas.Tables[0];
                 }
             }
         }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data;
-using System.Data.SqlClient;
 namespace PlanejamentoFinanceiro
 {
     public partial class form_editar_dados_2 : Form
